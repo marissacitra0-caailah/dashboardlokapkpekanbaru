@@ -1,0 +1,896 @@
+:root {
+  --biru-tua: #0a3d62;
+  --biru-navbar: #cfeaf7;
+  --kuning: #ffc93c;
+  --gold: #e0b73b;
+  --foam: #eaf6fb;
+  --muted: #8fb3c9;
+  --primary: #0056a7;
+  --coral: #ff9466;
+  --coral-soft: #ffb98f;
+  --teal-soft: #4fb8a6;
+  --font-judul: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background: var(--foam);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1,
+h2,
+.navbar-brand {
+  font-family: var(--font-judul);
+}
+
+/* Navbar */
+.navbar-kkp {
+  background: var(--biru-navbar) !important;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  overflow: visible;
+  position: relative;
+  z-index: 10;
+  transition:
+    box-shadow 0.3s ease,
+    padding 0.3s ease;
+}
+
+.navbar-kkp.scrolled {
+  box-shadow: 0 4px 16px rgba(10, 61, 98, 0.15);
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.navbar-kkp .navbar-brand img {
+  --logo-h: clamp(56px, 15vw, 90px);
+  height: var(--logo-h);
+  width: auto;
+  margin: calc(var(--logo-h) * -0.22) 0;
+}
+
+.navbar-kkp .navbar-brand {
+  font-weight: 700;
+  font-size: clamp(11px, 3vw, 13px);
+  color: var(--biru-tua);
+  line-height: 1.3;
+}
+
+.navbar-kkp .nav-link {
+  color: var(--biru-tua) !important;
+  font-weight: 600;
+}
+
+.navbar-kkp .nav-link.active {
+  text-decoration: underline;
+}
+
+.navbar-kkp .navbar-toggler {
+  border-color: var(--biru-tua);
+}
+
+.navbar-kkp .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgb%2810,61,98%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  border-radius: clamp(18px, 4vw, 32px);
+  padding: clamp(28px, 7vw, 60px) clamp(20px, 5vw, 45px);
+  color: white;
+  overflow: hidden;
+  background:
+    url("IMG_2253.JPG") center/cover;
+  min-height: clamp(170px, 30vw, 260px);
+}
+
+.hero h1 {
+  font-weight: 700;
+  font-size: clamp(28px, 4.5vw, 44px);
+  line-height: 1.15;
+  max-width: 560px;
+  animation: munculAtas 0.7s ease both;
+}
+
+@keyframes munculAtas {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.waves-deco {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0.85;
+}
+
+.waves-deco svg {
+  width: 160px;
+}
+
+@media (max-width: 700px) {
+  .waves-deco {
+    display: none;
+  }
+}
+
+/* Section umum */
+.section-head h2 {
+  color: var(--biru-tua);
+  font-weight: 700;
+  font-size: clamp(20px, 5vw, 32px);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.section-head.text-center h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-head p {
+  color: #5a7a8c;
+  font-size: 14px;
+}
+
+/* Media sosial */
+/* Media sosial */
+
+#media-sosial {
+  position: relative;
+  z-index: 30;
+  margin-bottom: 20px;
+  overflow: visible !important;
+}
+
+#media-sosial .row {
+  overflow: visible !important;
+  position: relative;
+}
+
+.marquee-bar {
+  position: relative;
+  z-index: 1;
+}
+
+.sosmed-item {
+  width: clamp(46px, 13vw, 64px);
+  flex: 0 0 auto;
+}
+
+.sosial-card {
+  position: relative;
+  z-index: 1;
+  border: none;
+  border-radius: 16px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--card-bg, #fff);
+  color: var(--card-teks, #333);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.516);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.sosial-card:hover {
+  z-index: 100;
+  transform: translateY(-4px) rotate(-0.4deg);
+  box-shadow: 0 14px 24px -8px rgba(0, 0, 0, 0.18);
+}
+
+.sosial-card .card-body {
+  padding: 8px;
+  height: 100%;
+  overflow: visible;
+}
+
+.sosial-card .icon-badge {
+  font-size: clamp(18px, 5vw, 24px);
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.sosial-card .icon-badge-img {
+  width: clamp(18px, 5vw, 24px);
+  height: clamp(18px, 5vw, 24px);
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.sosial-card:hover .icon-badge,
+.sosial-card:hover .icon-badge-img {
+  transform: scale(1.15) rotate(-8deg);
+}
+
+.sosial-card .status {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.sosial-card a.stretched-link {
+  border-radius: inherit;
+}
+
+/* Preview muncul di BAWAH kartu */
+.kartu-preview {
+  position: absolute;
+  top: calc(100% + 8px);
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  width: 220px;
+  margin-left: -110px;
+  background: #ffffff;
+  color: #222;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: 0.25s ease;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.sosial-card:hover .kartu-preview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Instagram — gradasi ungu-pink-oranye kayak icon app aslinya */
+.pill-instagram .kartu-preview .lihat {
+  color: #dd2a7b !important;
+}
+
+.pill-instagram {
+  --card-bg: linear-gradient(135deg,
+      #405de6,
+      #833ab4,
+      #c13584,
+      #e1306c,
+      #fd1d1d,
+      #f77737,
+      #fcaf45);
+  --card-teks: #f8f1f4;
+}
+
+/* Facebook — biru solid khas Meta */
+.pill-facebook .kartu-preview .lihat {
+  color: #1877f2 !important;
+}
+
+.pill-facebook {
+  --card-bg: linear-gradient(135deg, #1877f2, #0c63d4);
+  --card-teks: #ffffff;
+}
+
+/* TikTok — hitam solid kayak icon app aslinya */
+.pill-tiktok .kartu-preview .lihat {
+  color: #000000 !important;
+}
+
+.pill-tiktok {
+  --card-bg: linear-gradient(135deg, #000000, #1a1a1a);
+  --card-teks: #fff;
+}
+
+/* YouTube — merah solid khas YouTube */
+.pill-youtube .kartu-preview .lihat {
+  color: #ff0000 !important;
+}
+
+.pill-youtube {
+  --card-bg: linear-gradient(135deg, #ff0000, #cc0000);
+  --card-teks: #fefcfc;
+}
+
+/* WhatsApp — hijau solid khas WhatsApp */
+.pill-whatsapp .kartu-preview .lihat {
+  color: #25d366 !important;
+}
+
+.pill-whatsapp {
+  --card-bg: linear-gradient(135deg, #25d366, #128c7e);
+  --card-teks: #ffffff;
+}
+
+/* X (Twitter) — hitam solid khas X */
+.pill-x .kartu-preview .lihat {
+  color: #000000 !important;
+}
+
+.pill-x {
+  --card-bg: linear-gradient(135deg, #000000, #2b2b2b);
+  --card-teks: #ffffff;
+}
+
+.integrasi-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: clamp(18px, 4vw, 30px);
+  padding: clamp(24px, 6vw, 44px) clamp(14px, 4vw, 30px) clamp(28px, 6vw, 50px);
+  background: linear-gradient(150deg, #041c33, #0a3d62 55%, #0f5d7a);
+}
+
+/* Integrasi menu */
+.integrasi-wrap .section-head h2 {
+  color: var(--foam);
+  position: relative;
+  z-index: 1;
+}
+
+.integrasi-wrap .section-head p {
+  color: var(--primary);
+  position: relative;
+  z-index: 1;
+}
+
+.accordion-item {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(255, 201, 60, 0.55) !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  margin-bottom: 14px;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.accordion-item:hover {
+  border-color: var(--kuning) !important;
+  transform: translateY(-2px);
+}
+
+.accordion-button {
+  display: grid;
+  grid-template-columns: clamp(38px, 11vw, 90px) 1fr clamp(38px, 11vw, 90px);
+  align-items: center;
+  column-gap: clamp(6px, 2vw, 10px);
+  padding-left: clamp(12px, 3vw, 20px);
+  padding-right: clamp(12px, 3vw, 20px);
+  background: transparent !important;
+  color: var(--kuning) !important;
+  font-weight: 700;
+  font-size: clamp(13px, 3.5vw, 15px);
+  box-shadow: none !important;
+  transition: background 0.2s ease;
+}
+
+/* Matikan panah bawaan Bootstrap, kita pakai panah sendiri di kolom kanan */
+.accordion-button::after {
+  display: none !important;
+}
+
+.accordion-btn-spacer {
+  visibility: hidden;
+}
+
+.accordion-btn-title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.accordion-btn-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.accordion-chevron i {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) .accordion-chevron i {
+  transform: rotate(180deg);
+}
+
+.accordion-btn-title {
+  font-size: clamp(12.5px, 3.4vw, 15px);
+}
+
+.accordion-button .ikon-integrasi {
+  display: inline-block;
+  width: clamp(16px, 4.5vw, 20px);
+  height: clamp(16px, 4.5vw, 20px);
+  vertical-align: middle;
+  background-color: var(--kuning);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.accordion-button::after {
+  filter: invert(88%) sepia(28%) saturate(1200%) hue-rotate(1deg) brightness(105%);
+  transition: transform 0.3s ease;
+}
+
+.accordion-button .jumlah-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--foam);
+  opacity: 0.75;
+}
+
+.accordion-body {
+  padding: 0;
+}
+
+/* Grid isi kategori: icon di atas, teks di bawah, tersusun ke samping */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(10px, 2.5vw, 16px);
+  padding: clamp(12px, 3vw, 18px) clamp(12px, 3vw, 20px) clamp(16px, 4vw, 22px);
+}
+
+@media (max-width: 991px) {
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(6px, 2vw, 10px);
+  padding: clamp(10px, 3vw, 16px) clamp(4px, 2vw, 10px);
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.menu-item:hover {
+  opacity: 1;
+  color: var(--kuning);
+  background: rgba(255, 201, 60, 0.12);
+  border-color: var(--kuning);
+  transform: translateY(-4px);
+}
+
+.menu-item-icon {
+  width: clamp(56px, 16vw, 88px);
+  height: clamp(56px, 16vw, 88px);
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  display: block;
+}
+.menu-item-label {
+  font-size: clamp(10.5px, 2.9vw, 12.5px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Running text */
+.marquee-bar {
+  background: linear-gradient(90deg, var(--biru-tua), #0f5d7a);
+  padding: clamp(9px, 2.5vw, 12px) 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  animation: geser 40s linear infinite;
+}
+
+.marquee-track span {
+  font-weight: 600;
+  color: var(--kuning);
+  padding: 0 clamp(14px, 3.5vw, 24px);
+  font-size: clamp(12px, 3vw, 14px);
+}
+
+@keyframes geser {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Kartu pengaduan (horizontal, 2 kolom) */
+.pengaduan-section {
+  padding: 6px 0 6px;
+}
+
+.pengaduan-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-pengaduan {
+  flex: 1 1 300px;
+  max-width: 380px;
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 3vw, 16px);
+  padding: clamp(14px, 4vw, 20px) clamp(14px, 4vw, 22px);
+  border-radius: 20px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, var(--biru-tua), var(--teal-soft));
+  box-shadow: 0 10px 22px -6px rgb(16, 130, 212);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.pengaduan-row .btn-pengaduan:nth-child(2) {
+  background: linear-gradient(135deg, var(--coral), var(--gold));
+  box-shadow: 0 10px 22px -6px rgba(224, 131, 60, 0.685);
+}
+
+.btn-pengaduan:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 16px 30px -6px rgba(10, 61, 98, 0.4);
+  color: #fff;
+}
+
+.pengaduan-row .btn-pengaduan:nth-child(2):hover {
+  box-shadow: 0 16px 30px -6px rgba(224, 130, 60, 0.45);
+}
+
+.btn-pengaduan .ikon-pengaduan {
+  flex-shrink: 0;
+  width: clamp(40px, 11vw, 50px);
+  height: clamp(40px, 11vw, 50px);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.btn-pengaduan .ikon-pengaduan img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+  display: block;
+}
+
+.btn-pengaduan .ikon-wbs {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-pengaduan:hover .ikon-pengaduan {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.btn-pengaduan .teks-pengaduan {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.btn-pengaduan .label-pengaduan {
+  font-weight: 700;
+  font-size: clamp(13px, 3.5vw, 15px);
+}
+
+.btn-pengaduan .ket-pengaduan {
+  font-size: clamp(11px, 2.8vw, 12px);
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.btn-pengaduan .panah-pengaduan {
+  font-size: 16px;
+  opacity: 0.75;
+  transition: transform 0.25s ease;
+}
+
+.btn-pengaduan:hover .panah-pengaduan {
+  transform: translateX(4px);
+}
+
+@media (max-width: 700px) {
+  .btn-pengaduan {
+    flex: 1 1 100%;
+    padding: 16px 18px;
+  }
+}
+
+/* Animasi muncul pas discroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.tampil {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Khusus untuk HP (layar kurang dari 768px): sembunyikan pop-up/preview */
+@media (max-width: 767.98px) {
+  .sosial-card .kartu-preview {
+    display: none !important;
+  }
+}
+
+/* Grid kartu sosmed sekarang pakai flex-wrap ukuran kecil TETAP (lihat .sosmed-item),
+   jadi ukurannya ga ikut ngegedein pas layar makin lebar */
+
+/* Mengatasi pop-up / modal / dropdown agar tidak ketimpa */
+.social-popup-content,
+.modal-content {
+  padding: 15px;
+  /* Kurangi jarak dalam pop-up */
+  border-radius: 12px;
+  /* Biar sudutnya tetap rapi dan modern */
+}
+
+/* Pastikan parent container tidak memotong pop-up (overflow hidden) */
+#media-sosial {
+  overflow: visible !important;
+}
+
+/* ===== FIX POP-UP SOSMED ===== */
+
+#media-sosial,
+#media-sosial .row,
+#wrapSosial>div {
+  overflow: visible !important;
+}
+
+#wrapSosial>div {
+  position: relative;
+  z-index: 1;
+}
+
+#wrapSosial>div:hover {
+  z-index: 100;
+}
+
+.sosial-card {
+  position: relative;
+  z-index: 1;
+}
+
+.sosial-card:hover {
+  z-index: 100;
+}
+
+/* Default: pop-up di bawah */
+.kartu-preview {
+  position: absolute;
+  top: calc(100% + 8px);
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  width: 220px;
+  margin-left: -110px;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: 0.25s ease;
+  pointer-events: none;
+}
+
+.sosial-card:hover .kartu-preview {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Semua popup dibuka ke BAWAH (seragam, ga ada yang ke atas) */
+/* ============================================
+   LAYANAN OFFLINE — bg dipudarin + animasi
+   (tempel di paling bawah style.css)
+   ============================================ */
+
+#layanan-offline {
+  background: linear-gradient(150deg,
+      rgba(10, 61, 98, 0.28),
+      rgba(15, 93, 122, 0.18) 55%,
+      rgba(79, 184, 166, 0.16));
+  background-size: 200% 200%;
+  animation: offlineGeser 10s ease infinite;
+}
+
+/* Judul & tombol accordion, sesuaikan warna biar kontras di bg terang */
+#layanan-offline .accordion-button {
+  color: var(--biru-tua) !important;
+}
+
+#layanan-offline .jumlah-badge {
+  color: var(--biru-tua);
+  opacity: 0.65;
+}
+
+#layanan-offline .accordion-chevron i {
+  color: var(--biru-tua);
+}
+
+/* Ikon kategori (mask) jadi biru tua, bukan kuning */
+#layanan-offline .ikon-integrasi {
+  background-color: var(--biru-tua);
+}
+
+/* Kartu accordion transparan tipis, biar nyatu sama bg pudar */
+#layanan-offline .accordion-item {
+  background: rgba(255, 255, 255, 0.4) !important;
+  border: 1px solid rgba(10, 61, 98, 0.15) !important;
+}
+
+#layanan-offline .accordion-item:hover {
+  border-color: var(--gold) !important;
+}
+
+/* Menu item layanan */
+#layanan-offline .menu-item {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(10, 61, 98, 0.12);
+  color: var(--biru-tua);
+  opacity: 1;
+  animation: offlineMuncul 0.5s ease both;
+}
+
+#layanan-offline .menu-item:hover {
+  color: var(--biru-tua);
+  background: rgba(255, 201, 60, 0.25);
+  border-color: var(--kuning);
+  animation: offlineMelayang 0.6s ease;
+}
+
+/* Delay muncul bertahap tiap item (efek stagger sederhana) */
+#layanan-offline .menu-item:nth-child(1) {
+  animation-delay: 0.03s;
+}
+
+#layanan-offline .menu-item:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+#layanan-offline .menu-item:nth-child(3) {
+  animation-delay: 0.09s;
+}
+
+#layanan-offline .menu-item:nth-child(4) {
+  animation-delay: 0.12s;
+}
+
+#layanan-offline .menu-item:nth-child(5) {
+  animation-delay: 0.15s;
+}
+
+#layanan-offline .menu-item:nth-child(6) {
+  animation-delay: 0.18s;
+}
+
+#layanan-offline .menu-item:nth-child(7) {
+  animation-delay: 0.21s;
+}
+
+#layanan-offline .menu-item:nth-child(8) {
+  animation-delay: 0.24s;
+}
+
+#layanan-offline .menu-item:nth-child(9) {
+  animation-delay: 0.27s;
+}
+
+#layanan-offline .menu-item:nth-child(10) {
+  animation-delay: 0.3s;
+}
+
+#layanan-offline .menu-item:nth-child(11) {
+  animation-delay: 0.33s;
+}
+
+#layanan-offline .menu-item:nth-child(12) {
+  animation-delay: 0.36s;
+}
+
+/* Gradient bg bergerak pelan */
+@keyframes offlineGeser {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Muncul halus pas dropdown dibuka */
+@keyframes offlineMuncul {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efek melayang ringan pas hover */
+@keyframes offlineMelayang {
+
+  0%,
+  100% {
+    transform: translateY(-4px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
